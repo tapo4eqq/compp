@@ -293,40 +293,28 @@
             align-items: center;
         }
 
-        .about-image {
-            position: relative;
+        .tech-specs {
+            background: var(--primary);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .about-image:before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--accent);
-            z-index: -1;
-        }
-
-        .pc-setup {
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
+        .spec-item {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .pc-setup:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-value {
+            color: var(--accent);
+            font-weight: 600;
         }
 
         .about-content h2 {
@@ -395,6 +383,37 @@
             padding: 8px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--gray);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--secondary);
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
         }
 
         /* Pricing Section */
@@ -473,37 +492,6 @@
             content: '✓';
             color: var(--accent);
             margin-right: 10px;
-        }
-
-        /* Services Section (вместо Gallery) */
-        .services {
-            background: var(--primary);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--secondary);
-            padding: 40px 30px;
-            text-align: center;
-            border-radius: 8px;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 20px;
         }
 
         /* Contact Section */
@@ -799,9 +787,31 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image fade-in">
-                    <div class="pc-setup">
-                        <i class="fas fa-desktop" style="font-size: 4rem; color: var(--accent);"></i>
+                <div class="tech-specs fade-in">
+                    <h3 style="color: var(--accent); margin-bottom: 30px; text-align: center;">Технические характеристики</h3>
+                    <div class="spec-item">
+                        <span>Процессор</span>
+                        <span class="spec-value">Intel Core i9-13900K</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Видеокарта</span>
+                        <span class="spec-value">NVIDIA RTX 4090</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Оперативная память</span>
+                        <span class="spec-value">32GB DDR5</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Накопитель</span>
+                        <span class="spec-value">2TB NVMe SSD</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Монитор</span>
+                        <span class="spec-value">27" 240Hz IPS</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Интернет</span>
+                        <span class="spec-value">10 Гбит/с</span>
                     </div>
                 </div>
                 <div class="about-content">
@@ -877,7 +887,7 @@
         </div>
     </section>
 
-    <!-- Services Section (вместо Gallery) -->
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <h2 class="fade-in">Наши услуги</h2>
@@ -1101,7 +1111,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 NEXUS Computer Club. Все права защищены.</p>
+                <p>&copy; 2023 NEXUS Computer Club. Все права защищены.</p>
             </div>
         </div>
     </footer>
